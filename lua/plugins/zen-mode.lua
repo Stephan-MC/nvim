@@ -6,5 +6,6 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
+    key = {{ "<Leader>uz", "<cmd>ZenMode<cr>", "Toggle Zen Mode" }}
   },
 }
