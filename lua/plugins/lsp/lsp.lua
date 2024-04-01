@@ -1,13 +1,13 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        tsserver = {},
-      },
-      setup = {},
-    },
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       tsserver = {},
+  --     },
+  --     setup = {},
+  --   },
+  -- },
 
   {
     "williamboman/mason.nvim",
