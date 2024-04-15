@@ -18,6 +18,7 @@ return {
         "angular-language-server",
         "tailwindcss-language-server",
         "vue-language-server",
+        "blade-formatter",
 
         "phpactor",
         -- "intelephense",
