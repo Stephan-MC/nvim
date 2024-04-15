@@ -18,7 +18,9 @@ return {
         "angular-language-server",
         "tailwindcss-language-server",
         "vue-language-server",
-        "intelephense",
+
+        "phpactor",
+        -- "intelephense",
       },
     },
   },
