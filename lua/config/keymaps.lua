@@ -46,18 +46,6 @@ map({ "n" }, "<leader>fs", vim.cmd.update, {
   desc = "save file",
 })
 
--- [[ Help ]]
---[[
-wk.register({
-  ["<leader>h"] = {
-    name = "Help",
-  },
-})
-map({ "n", "v" }, "<leader>hh", vim.cmd.help, { desc = "Nvim Help" })
-map({ "n", "v" }, "<leader>hk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
-]]
---
-
 map({ "n" }, "<leader>o", "<cmd>Neotree focus<cr>", {
   desc = "Explorer focus",
 })
