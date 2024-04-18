@@ -22,17 +22,24 @@ map("n", "<leader>wv", "<C-W>v", {
   desc = "Split window vertically",
 })
 map({ "n", "v" }, "<leader>wh", "<C-W><C-H>", {
-  desc = "Move to left split",
+  desc = "Go to left split",
 })
 map({ "n", "v" }, "<leader>wj", "<C-W><C-J>", {
-  desc = "Move to split below",
+  desc = "Go to bottom split",
 })
 map({ "n", "v" }, "<leader>wk", "<C-W><C-K>", {
-  desc = "Move to right split",
+  desc = "Go to top split",
 })
 map({ "n", "v" }, "<leader>wl", "<C-W><C-L>", {
-  desc = "Move to right split",
+  desc = "Go to right split",
 })
+map({ "n", "v" }, "<leader>wn", "<C-W><C-N>", {
+  desc = "New window",
+})
+map("n", "<leader>wK", "<C-W><C-K>", { desc = "Move current window to the top" })
+map("n", "<leader>wL", "<C-W><C-L>", { desc = "Move current window to the right" })
+map("n", "<leader>wJ", "<C-W><C-J>", { desc = "Move current window to the bottom" })
+map("n", "<leader>wH", "<C-W><C-H>", { desc = "Move current window to the left" })
 unmap("n", "<leader>w-")
 unmap("n", "<leader>w|")
 unmap("n", "<leader>|")
@@ -49,3 +56,6 @@ map({ "n" }, "<leader>fs", vim.cmd.update, {
 map({ "n" }, "<leader>o", "<cmd>Neotree focus<cr>", {
   desc = "Explorer focus",
 })
+
+-- [[ Notes ]]
+map("n", "<leader>n", "", { desc = "Notes" })
