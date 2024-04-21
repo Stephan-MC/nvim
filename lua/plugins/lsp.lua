@@ -21,7 +21,6 @@ return {
         "blade-formatter",
 
         "phpactor",
-        -- "intelephense",
       },
     },
   },
