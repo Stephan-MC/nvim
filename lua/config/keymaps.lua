@@ -56,6 +56,3 @@ map({ "n" }, "<leader>fs", vim.cmd.update, {
 map({ "n" }, "<leader>o", "<cmd>Neotree focus<cr>", {
   desc = "Explorer focus",
 })
-
--- [[ Notes ]]
-map("n", "<leader>n", "", { desc = "Notes" })
