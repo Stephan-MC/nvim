@@ -5,6 +5,19 @@ return {
     lazy = true,
     ft = "norg",
     cmd = "Neorg",
+    keys = {
+      ["<leader>n"] = {
+        "n",
+        desc = "Neorg",
+        name = "Notes",
+      },
+      {
+        "<leader>nn",
+        "core.dirman.new.note",
+        mode = "n",
+        desc = "New Neorg note",
+      },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
       { "vhyrro/luarocks.nvim", priority = 1000, opts = {} },
@@ -18,7 +31,7 @@ return {
         ["core.dirman"] = {
           config = {
             workspaces = {
-              index = "~/Documents/neorg-notes",
+              index = "~/Documents/notes",
             },
             default_workspace = "index",
           },
