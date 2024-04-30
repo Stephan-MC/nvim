@@ -1,6 +1,7 @@
 return {
   {
     "barrett-ruth/import-cost.nvim",
+    enabled = false,
     -- if on windows
     -- build = 'pwsh install.ps1 yarn',
     build = "sh install.sh bun",
