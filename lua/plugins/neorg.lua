@@ -38,14 +38,16 @@ return {
         },
       },
     },
-    config = function(_, opts)
+    init = function()
       vim.api.nvim_create_autocmd("BufEnter", {
-        pattern = { "*.org", "*.minister" },
+        group = vim.api.nvim_create_augroup("Neorg", { clear = true }),
+        pattern = { "*.org", "*.norg" },
         callback = function()
           vim.opt.filetype = "norg"
         end,
       })
-
+    end,
+    config = function(_, opts)
       require("neorg").setup(opts)
     end,
   },
