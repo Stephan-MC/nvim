@@ -3,7 +3,7 @@ return {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     lazy = true,
-    ft = "norg",
+    ft = { "norg", "org" },
     cmd = "Neorg",
     keys = {
       ["<leader>n"] = {
@@ -39,6 +39,13 @@ return {
       },
     },
     config = function(_, opts)
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = { "*.org", "*.minister" },
+        callback = function()
+          vim.opt.filetype = "norg"
+        end,
+      })
+
       require("neorg").setup(opts)
     end,
   },
