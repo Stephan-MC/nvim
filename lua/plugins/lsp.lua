@@ -14,16 +14,20 @@ return {
     opts = {
       -- List of << Must Install >> servers
       ensure_installed = {
-        "emmet-language-server",
-        "angular-language-server",
-        "tailwindcss-language-server",
-        "vue-language-server",
-        "blade-formatter",
+        "emmet_language_server",
+        "angularls",
+        "tailwindcss",
+        "volar",
+        "tsserver",
 
         "phpactor",
       },
     },
-    dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig", "folke/neoconf.nvim" },
+    dependencies = {
+      { "williamboman/mason.nvim", opts = { ensure_installed = { "blade-formatter" } } },
+      "neovim/nvim-lspconfig",
+      "folke/neoconf.nvim",
+    },
     config = function(_, opts)
       local lspconfig = require("lspconfig")
 
@@ -34,6 +38,7 @@ return {
           ["language_server_php_cs_fixer.enabled"] = true,
           ["language_server_php_cs_fixer.show_diagnostics"] = false,
           ["language_server_php_cs_fixer.bin"] = vim.fn.stdpath("data") .. "/mason/bin/php-cs-fixer",
+          ["language_server_completion.trim_leading_dollar"] = true,
         },
       })
 
@@ -51,6 +56,7 @@ return {
           "typescriptreact",
           "blade",
           "php",
+          "markdown",
         },
       })
     end,
