@@ -4,7 +4,6 @@ return {
     main = "ibl",
     opts = {},
     config = function(_, opts)
-      require("indent_blankline").setup(opts)
       local highlight = {
         "RainbowRed",
         "RainbowYellow",
