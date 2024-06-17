@@ -11,7 +11,7 @@ return {
       flavour = "auto", -- latte, frappe, macchiato, mocha
       background = { -- :h background
         light = "latte",
-        dark = "macchiato",
+        dark = "mocha",
       },
       transparent_background = true, -- disables setting the background color.
       show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -47,7 +47,7 @@ return {
         gitsigns = true,
         nvimtree = true,
         treesitter = true,
-        notify = false,
+        notify = true,
         mini = {
           enabled = true,
           indentscope_color = "",
@@ -72,7 +72,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
     },
   },
 }
