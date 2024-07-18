@@ -30,6 +30,7 @@ return {
           "blade",
           "php",
           "markdown",
+          "blade",
         },
       })
     end,
