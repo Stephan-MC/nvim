@@ -36,14 +36,6 @@ map({ "n", "v" }, "<leader>wl", "<C-W><C-L>", {
 map({ "n", "v" }, "<leader>wn", "<C-W><C-N>", {
   desc = "New window",
 })
-map("n", "<leader>wK", "<C-W><C-K>", { desc = "Move current window to the top" })
-map("n", "<leader>wL", "<C-W><C-L>", { desc = "Move current window to the right" })
-map("n", "<leader>wJ", "<C-W><C-J>", { desc = "Move current window to the bottom" })
-map("n", "<leader>wH", "<C-W><C-H>", { desc = "Move current window to the left" })
-unmap("n", "<leader>w-")
-unmap("n", "<leader>w|")
-unmap("n", "<leader>|")
-unmap("n", "<leader>-")
 
 -- [[ File ]]
 map({ "n" }, "<leader>fu", vim.cmd.update, {
