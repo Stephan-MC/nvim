@@ -8,11 +8,48 @@ parser_config.blade = {
   filetype = "blade",
 }
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufRead" }, {
-  group = vim.api.nvim_create_augroup("BladeFiletypeRelated", { clear = true }),
-  pattern = { "*.blade.php" },
-  callback = function()
-    vim.opt.filetype = "blade"
-  end,
-})
-return { {} }
+return {
+  {
+    "nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "blade" })
+      end
+
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+        pattern = { "*.blade.php" },
+        callback = function()
+          vim.treesitter.start(nil, "blade")
+          -- vim.opt.filetype = "blade"
+        end,
+      })
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "tlint",
+        "blade-formatter",
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters_by_ft = {
+        blade = { "tlint" },
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        blade = { "blade-formatter" },
+      },
+    },
+  },
+}
